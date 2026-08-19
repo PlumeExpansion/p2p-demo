@@ -2,27 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>P2P 2D Circle Game</title>
+  <title>P2P 3D Sphere Game - Three.js</title>
   <style>
     body {
       margin: 0;
+      overflow: hidden; /* Prevents scrollbars in 3D canvas */
       background: #111;
       color: #fff;
       font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     #ui {
-      margin: 15px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10; /* Keeps controls above the 3D WebGL canvas */
+      background: rgba(0,0,0,0.7);
+      padding: 12px;
+      border-radius: 6px;
     }
-    canvas {
-      border: 2px solid #444;
+    input, button {
+      padding: 6px;
+      margin: 2px;
     }
   </style>
-  <!-- Load Phaser 3 -->
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
-  <!-- Load PeerJS for P2P WebRTC -->
+  <!-- Load Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Load PeerJS -->
   <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
 </head>
 <body>
@@ -34,8 +39,6 @@
     <button id="joinBtn">Join Game</button>
     <p id="status">Status: Waiting for action...</p>
   </div>
-
-  <div id="game-container"></div>
 
   <script src="game.js"></script>
 </body>
