@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>P2P 2D Circle Game</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #ui {
+      margin: 15px;
+    }
+    canvas {
+      border: 2px solid #444;
+    }
+  </style>
+  <!-- Load Phaser 3 -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <!-- Load PeerJS for P2P WebRTC -->
+  <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+  <div id="ui">
+    <button id="hostBtn">Host Game</button>
+    <br><br>
+    <input type="text" id="joinIdInput" placeholder="Enter Host ID" />
+    <button id="joinBtn">Join Game</button>
+    <p id="status">Status: Waiting for action...</p>
+  </div>
+
+  <div id="game-container"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
